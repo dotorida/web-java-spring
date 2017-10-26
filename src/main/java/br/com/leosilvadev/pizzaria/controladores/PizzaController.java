@@ -1,5 +1,7 @@
 package br.com.leosilvadev.pizzaria.controladores;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -43,6 +46,13 @@ public class PizzaController {
     public String salvarPizza(@Valid @ModelAttribute Pizza pizza, 
     BindingResult bindingResult, Model model){     
        
+       
+            /*List<FieldError> errors = bindingResult.getFieldErrors();
+            for (FieldError error : errors ) {
+                System.out.println (error.getObjectName() + " - " + error.getDefaultMessage());
+            }*/
+       
+       
        if(bindingResult.hasFieldErrors()){
            throw new IngredienteInvalidException();
                              
@@ -71,6 +81,13 @@ public class PizzaController {
         model.addAttribute("categorias", CategoriaDePizza.values()); 
         model.addAttribute("ingredientes", ingredienteRepositorio.findAll());
         return "pizza/listagem";
+    }
+    
+    
+    @RequestMapping(method=RequestMethod.GET, value="/{id}")
+    public ResponseEntity<Pizza>  buscarPizza(@PathVariable long id){
+        Pizza pizza = pizzaRepositorio.findOne(id);
+        return new ResponseEntity<>(pizza, HttpStatus.OK);
     }
     
     

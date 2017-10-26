@@ -34,7 +34,7 @@
                 </select>
                 
                 
-                    <input id="id" name="id" type="hidden">
+                    <input id="id" name="id" type="text">
                 
               </div>
               <div class="modal-footer">

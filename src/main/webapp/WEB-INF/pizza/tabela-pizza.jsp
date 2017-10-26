@@ -36,6 +36,7 @@
             </tr>
        
             </c:forEach>
+            </tbody>
         <tfoot>
             <tr>
                 <td colspan="7">Pizzas cadastrados:<span id="quantidade-pizzas"> ${pizzas.size()}</span></td>
