@@ -5,4 +5,3 @@ public enum CategoriaDeIngrediente {
     FRIOS, SALADAS, CARNE
     
 }
-
