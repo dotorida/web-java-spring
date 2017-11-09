@@ -21,7 +21,9 @@ $(document).ready(function(){
           .fail(function() {
             alert( 'Erro ao salvar');
           })
-          .always('modal-ingrediente').modal('hide')
+          .always(function(){
+               $('#modal-ingrediente').modal('hide');
+            })
     });
  }
  
@@ -34,7 +36,7 @@ $(document).ready(function(){
  
     var aplicarListeners = function(){
       
-      $('#modal-ingrediente').on('hide.bs.modal', limparDados);
+     $('#modal-ingrediente').on('hide.bs.modal', limparDados);
       
       $('.btn-editar').click(function(){
          var id = $(this).parents('tr').data('id'); 
