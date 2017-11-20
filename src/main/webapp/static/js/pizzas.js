@@ -53,7 +53,7 @@ var aplicarListeners = function(){
               $('#preco').val(pizza.preco);
               $('#categoria').val(pizza.categoria);
               $('#ingredientes').val(pizza.ingredientes);
-              
+             
               pizza.ingredientes.forEach(function(ingrediente){
                   var id = ingrediente.id;
                   $('#ingredientes option[value='+id+']').attr('selected',true);

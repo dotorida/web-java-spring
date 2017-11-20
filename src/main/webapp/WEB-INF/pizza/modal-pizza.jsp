@@ -33,8 +33,8 @@
                     </c:forEach>
                 </select>
                 
-                
-                    <input id="id" name="id" type="text">
+                <input type="hidden" id="id" name="id"/>
+
                 
               </div>
               <div class="modal-footer">
