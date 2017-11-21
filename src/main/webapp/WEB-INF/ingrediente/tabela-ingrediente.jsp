@@ -38,9 +38,10 @@
                   Cadastrar ingrediente
                 </button>
                 
-                
                 </td>
             </tr>
         </tfoot>
         
     </table>
+    
+    <button type="button" class="btn btn-danger xxx" >xxx</button>

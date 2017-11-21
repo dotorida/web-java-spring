@@ -11,6 +11,19 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
+    
+    <repositories>
+		<repository>
+	        <id>spring-milestones</id>
+	        <name>Spring Milestones</name>
+	        <url>http://repo.spring.io/milestone</url>
+	        <snapshots>
+	            <enabled>false</enabled>
+	        </snapshots>
+	    </repository>
+	</repositories>
+    
+    
     <dependencies>
         <dependency>
 			<groupId>org.springframework</groupId>
@@ -108,6 +121,17 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+		
+		<dependency>
+	        <groupId>org.springframework.security</groupId>
+	        <artifactId>spring-security-web</artifactId>
+	        <version>4.0.0.RC2</version>
+	    </dependency>
+		<dependency>
+	        <groupId>org.springframework.security</groupId>
+	        <artifactId>spring-security-config</artifactId>
+	        <version>4.0.0.RC2</version>
+	    </dependency>
 
         <!--
         <dependency>

@@ -40,9 +40,7 @@ var aplicarListeners = function(){
     
   $('#modal-ingrediente').on('hide.bs.modal', limparDados);
    
-   
    $('.btn-editar').click(function(){
-      
        var idPizza = $(this).parents('tr').data('id');
        $.ajax({
           url:'pizzas/'+idPizza,
@@ -62,15 +60,8 @@ var aplicarListeners = function(){
               $('#modal-pizza').modal('show');
                         
               }
-          
-          
-          
        });
-       
     });
-    
-    
-  
     
     $('.btn-deletar').click(function(){
         var id = $(this).parents('tr').data('id');

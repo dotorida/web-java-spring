@@ -15,6 +15,10 @@
             @IMPORT url("${path}/static/bootstrap/css/bootstrap.min.css");
             @IMPORT url("${path}/static/bootstrap/css/bootstrap-theme.min.css");
         </style>
+        
+        <script type="text/javascript" src="${path}/static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${path}/static/js/ingredientes.js"></script>
                
 </head>
 <body>
@@ -40,9 +44,6 @@
     
  <!--           <script type="text/javascript" src="${path}/static/js/jquery-2.1.3.min.js"></script>
      -->     
-     <script type="text/javascript" src="${path}/static/js/jquery-3.2.1.min.js"></script>
-          
-          <script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="${path}/static/js/ingredientes.js"></script>
+    
 </body>
 </html>

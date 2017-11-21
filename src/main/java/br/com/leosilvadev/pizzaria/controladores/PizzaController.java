@@ -33,9 +33,6 @@ public class PizzaController {
     @Autowired private IngredientePropertyEditor ingredientePropertyEditor;
     @Autowired private IngredienteRepositorio ingredienteRepositorio;  
     
-    public PizzaController(){
-        System.out.println("ini PizzaController ");
-        }
     
     
     @RequestMapping("/quantas")

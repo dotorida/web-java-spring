@@ -1,9 +1,6 @@
 $(document).ready(function(){
-	
 	aplicarListeners();
-	
 	aplicatListenerBtnSalvar();
-	
 });
 
 var aplicatListenerBtnSalvar = function(){
@@ -13,13 +10,11 @@ var aplicatListenerBtnSalvar = function(){
 		
 		$.post(url, dadosIngrediente)
 			.done(function(pagina){
-				$('#secao-ingredientes').html(pagina)
+				$('#secao-ingredientes').html(pagina);
 				aplicarListeners();
-				console.log('ja salvo ')
 			})
 			.fail(function(){
 				alert('Erro ao salvar!');
-				
 			})
 			.always(function(){
 				$('#modal-ingrediente').modal('hide');
@@ -38,36 +33,40 @@ var limparModal = function(){
 var aplicarListeners = function(){
 	$('#modal-ingrediente').on('hide.bs.modal', limparModal);
 	
-	$('.btn-editar').on('click', function(){
-		var id = $(this).parents('tr').data('id');
-		console.log('herennnn '+id)
+	  $('.xxx').click(function(){
+	       console.log('ola');   
+	   });
+	
+	   
+	   $('.btn-deletar').click(function(){
+    		var id = $(this).parents('tr').data('id');
+    		$.ajax({
+    			url : 'ingredientes/'+id,
+    			type: 'DELETE',
+    		    success: function(result) {
+    		    	$('tr[data-id="'+id+'"]').remove();
+    				var ingredientes = parseInt( $('#quantidade-ingredientes').text() );
+    		    	$('#quantidade-ingredientes').text(ingredientes - 1);
+    		    }
+    		});
+		
+	   });
+	   
+	$('.btn-editar').click(function(){
+		var idIngrediente = $(this).parents('tr').data('id');
+		
 		$.ajax({
 		      type:'GET',
-		      url:'ingredientes/'+id,
-			     success:function(ingrediente){
+		      url:'ingredientes/'+idIngrediente,
+			    success:function(ingrediente){
 				$('#id').val(ingrediente.id);
 				$('#nome').val(ingrediente.nome);
 				$('#categoria').val(ingrediente.categoria);
 				
 				$('#modal-ingrediente').modal('show');
 			    }
-			})
+			});
 	
-	
-	$('.btn-deletar').click(function(){
-		var id = $(this).parents('tr').data('id');
-		console.log('herennnn '+id)
-		$.ajax({
-			url : "ingredientes/"+id,
-			type: 'DELETE',
-		    success: function(result) {
-		    	$('tr[data-id="'+id+'"]').remove();
-				var ingredientes = parseInt( $('#quantidade-ingredientes').text() );
-		    	$('#quantidade-ingredientes').text(ingredientes - 1);
-		    }
-		});
-		
-	});
-})
-}
+    });
+};
 
