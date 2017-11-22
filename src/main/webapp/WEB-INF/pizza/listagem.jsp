@@ -39,12 +39,7 @@
         </setion>
             
             <jsp:include page="modal-pizza.jsp" />
-            <div>
-                <form action="${path}/sair" method="post">
-                    <input type="hidden" name="_csrf" value="${_csrf.token}">
-                    <button type="submit">Sair da Aplicação</button>
-                </form>    
-            </div>
+         
     </div>
         
             <script type="text/javascript" src="${path}/static/js/jquery-3.2.1.min.js"></script>

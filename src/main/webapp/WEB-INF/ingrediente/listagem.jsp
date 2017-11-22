@@ -20,26 +20,27 @@
                
 </head>
 <body>
-    
+      <div class="container">
+        <jsp:include page="../menu.jsp"/>
 
     <c:if test="${not empty mensagemErro}">
-        <div class="container">
+        <div>
             <div class="alert alert-danger">${mensagemErro}</div>
         </div>
     </c:if>
     
     <c:if test="${not empty mensagemInfo}">
-        <div class="container">
+        <div>
             <div class="alert alert-info">${mensagemInfo}</div>
         </div>
     </c:if>
     
-     <section class="container" id="secao-ingrediente">
+     <section id="secao-ingrediente">
         <jsp:include page="tabela-ingrediente.jsp" />
     </setion>
     
             <jsp:include page="modal-ingrediente.jsp"/>
-    
+    </div>
  <script type="text/javascript" src="${path}/static/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${path}/static/js/ingredientes.js"></script>   
