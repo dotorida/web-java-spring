@@ -21,9 +21,22 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/app/pizzaria/**", "/app/ingredientes/**").hasRole("PIZZARIA")
+                .antMatchers("/app/pizzaria/**", "/app/ingredientes/**", "/app/pizzas/**").hasRole("PIZZARIA")
                   .anyRequest().permitAll()
-            .and().httpBasic();
+            .and()
+                .formLogin()
+                    .loginPage("/login.jsp")
+                    .loginProcessingUrl("/autenticar")
+                    .defaultSuccessUrl("/app/pizzas")
+                    .failureUrl("/login.jsp?semacesso=true")
+                    .usernameParameter("usuario")
+                    .passwordParameter("senha")
+            .and()
+                .logout()
+                    .logoutUrl("/sair")
+                    .logoutSuccessUrl("/login.jsp?saiu=true");
+                        
+                    
     }
     
     
