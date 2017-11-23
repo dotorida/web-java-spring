@@ -1,6 +1,11 @@
 package br.com.leosilvadev.pizzaria.configuracoes;
 
 
+<<<<<<< HEAD
+=======
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> parent of 99d1490... erro 404
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -54,6 +59,15 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
     public BCryptPasswordEncoder encoder(){
         return new BCryptPasswordEncoder();
     }
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 1f17152... trying to encode password on database
+=======
+    
+    @Test
+    public void ola(){
+        System.out.println("ola");
+    }
+    
+>>>>>>> parent of 99d1490... erro 404
 }
