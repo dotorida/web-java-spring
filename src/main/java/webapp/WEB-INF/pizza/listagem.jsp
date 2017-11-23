@@ -37,13 +37,26 @@
     </setion>
         
 <<<<<<< HEAD:src/main/java/webapp/WEB-INF/pizza/listagem.jsp
+<<<<<<< HEAD:src/main/java/webapp/WEB-INF/pizza/listagem.jsp
+<<<<<<< HEAD:src/main/java/webapp/WEB-INF/pizza/listagem.jsp
          <section  id="secao-pizza">
             <jsp:include page="tabela-pizza.jsp" />
         </setion>
             
             <jsp:include page="modal-pizza.jsp" />
-         
+            <div>
+                <form action="${path}/sair" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <button type="submit">Sair da Aplicação</button>
+                </form>    
+            </div>
     </div>
+=======
+        <jsp:include page="modal-pizza.jsp" />
+>>>>>>> parent of 2ad37b1... spring security done and init menu:src/main/webapp/WEB-INF/pizza/listagem.jsp
+=======
+        <jsp:include page="modal-pizza.jsp" />
+>>>>>>> parent of 2ad37b1... spring security done and init menu:src/main/webapp/WEB-INF/pizza/listagem.jsp
 =======
         <jsp:include page="modal-pizza.jsp" />
 >>>>>>> parent of 2ad37b1... spring security done and init menu:src/main/webapp/WEB-INF/pizza/listagem.jsp

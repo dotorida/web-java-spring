@@ -22,31 +22,46 @@
                
 </head>
 <body>
-      <div class="container">
-        <jsp:include page="../menu.jsp"/>
+    
 
     <c:if test="${not empty mensagemErro}">
-        <div>
+        <div class="container">
             <div class="alert alert-danger">${mensagemErro}</div>
         </div>
     </c:if>
     
     <c:if test="${not empty mensagemInfo}">
-        <div>
+        <div class="container">
             <div class="alert alert-info">${mensagemInfo}</div>
         </div>
     </c:if>
     
-     <section id="secao-ingrediente">
+     <section class="container" id="secao-ingrediente">
         <jsp:include page="tabela-ingrediente.jsp" />
     </setion>
     
             <jsp:include page="modal-ingrediente.jsp"/>
 <<<<<<< HEAD:src/main/java/webapp/WEB-INF/ingrediente/listagem.jsp
+<<<<<<< HEAD:src/main/java/webapp/WEB-INF/ingrediente/listagem.jsp
+<<<<<<< HEAD:src/main/java/webapp/WEB-INF/ingrediente/listagem.jsp
+<<<<<<< HEAD:src/main/java/webapp/WEB-INF/ingrediente/listagem.jsp
     </div>
+=======
+    
+>>>>>>> parent of 1f17152... trying to encode password on database:src/main/webapp/WEB-INF/ingrediente/listagem.jsp
  <script type="text/javascript" src="${path}/static/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${path}/static/js/ingredientes.js"></script>   
+=======
+    
+ <!--           <script type="text/javascript" src="${path}/static/js/jquery-2.1.3.min.js"></script>
+     -->     
+>>>>>>> parent of 2ad37b1... spring security done and init menu:src/main/webapp/WEB-INF/ingrediente/listagem.jsp
+=======
+    
+ <!--           <script type="text/javascript" src="${path}/static/js/jquery-2.1.3.min.js"></script>
+     -->     
+>>>>>>> parent of 2ad37b1... spring security done and init menu:src/main/webapp/WEB-INF/ingrediente/listagem.jsp
 =======
     
  <!--           <script type="text/javascript" src="${path}/static/js/jquery-2.1.3.min.js"></script>

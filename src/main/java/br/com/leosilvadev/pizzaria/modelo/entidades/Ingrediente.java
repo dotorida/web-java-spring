@@ -54,8 +54,6 @@ public class Ingrediente {
     public String toString(){
         return this.id+" "+this.nome+" "+categoria;
     }
-    
-    
 
 @Override
 	public int hashCode() {
