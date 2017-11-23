@@ -54,4 +54,6 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
     public BCryptPasswordEncoder encoder(){
         return new BCryptPasswordEncoder();
     }
+=======
+>>>>>>> parent of 1f17152... trying to encode password on database
 }
