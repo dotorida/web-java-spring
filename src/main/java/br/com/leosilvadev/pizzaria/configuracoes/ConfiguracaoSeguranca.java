@@ -1,18 +1,16 @@
 package br.com.leosilvadev.pizzaria.configuracoes;
 
-<<<<<<< HEAD
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-=======
->>>>>>> parent of 1f17152... trying to encode password on database
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
@@ -30,9 +28,6 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
         http.authorizeRequests()
                 .antMatchers("/app/pizzaria/**", "/app/ingredientes/**").hasRole("PIZZARIA")
                   .anyRequest().permitAll()
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             .and()
                 .formLogin()
                     .loginPage("/login.jsp")
@@ -45,20 +40,8 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
                 .logout()
                     .logoutUrl("/sair")
                     .logoutSuccessUrl("/login.jsp?saiu=true");
-<<<<<<< HEAD
-=======
-            .and().httpBasic();
->>>>>>> parent of 2ad37b1... spring security done and init menu
-=======
-            .and().httpBasic();
->>>>>>> parent of 2ad37b1... spring security done and init menu
-=======
-            .and().httpBasic();
->>>>>>> parent of 2ad37b1... spring security done and init menu
-=======
                         
                     
->>>>>>> parent of 1f17152... trying to encode password on database
     }
     
     
@@ -68,14 +51,9 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
         // TODO Auto-generated method stub
         super.configure(web);
     }
-<<<<<<< HEAD
     
     @Bean
     public BCryptPasswordEncoder encoder(){
         return new BCryptPasswordEncoder();
     }
-    
-    
-=======
->>>>>>> parent of 1f17152... trying to encode password on database
 }
