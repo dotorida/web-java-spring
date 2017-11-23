@@ -37,8 +37,9 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/app/pizzaria/**", "/app/ingredientes/**", "/app/pizzas/**").hasRole("PIZZARIA")
+                .antMatchers("/app/pizzaria/**", "/app/ingredientes/**").hasRole("PIZZARIA")
                   .anyRequest().permitAll()
+<<<<<<< HEAD
             .and()
                 .formLogin()
                     .loginPage("/login.jsp")
@@ -51,6 +52,9 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
                 .logout()
                     .logoutUrl("/sair")
                     .logoutSuccessUrl("/login.jsp?saiu=true");
+=======
+            .and().httpBasic();
+>>>>>>> parent of 2ad37b1... spring security done and init menu
     }
     
     @Override

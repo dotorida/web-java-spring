@@ -18,22 +18,25 @@
                
 </head>
 <body>
-   <div class="container">
-        <jsp:include page="../menu.jsp"/>
-        
     
-        <c:if test="${not empty mensagemErro}">
-            <div>
-                <div class="alert alert-danger">${mensagemErro}</div>
-            </div>
-        </c:if>
+
+    <c:if test="${not empty mensagemErro}">
+        <div class="container">
+            <div class="alert alert-danger">${mensagemErro}</div>
+        </div>
+    </c:if>
+    
+    <c:if test="${not empty mensagemInfo}">
+        <div class="container">
+            <div class="alert alert-info">${mensagemInfo}</div>
+        </div>
+    </c:if>
+    
+     <section class="container" id="secao-pizza">
+        <jsp:include page="tabela-pizza.jsp" />
+    </setion>
         
-        <c:if test="${not empty mensagemInfo}">
-            <div>
-                <div class="alert alert-info">${mensagemInfo}</div>
-            </div>
-        </c:if>
-        
+<<<<<<< HEAD:src/main/java/webapp/WEB-INF/pizza/listagem.jsp
          <section  id="secao-pizza">
             <jsp:include page="tabela-pizza.jsp" />
         </setion>
@@ -41,7 +44,11 @@
             <jsp:include page="modal-pizza.jsp" />
          
     </div>
+=======
+        <jsp:include page="modal-pizza.jsp" />
+>>>>>>> parent of 2ad37b1... spring security done and init menu:src/main/webapp/WEB-INF/pizza/listagem.jsp
         
+            <!--<script type="text/javascript" src="${path}/static/js/jquery-2.1.3.min.js"></script>-->
             <script type="text/javascript" src="${path}/static/js/jquery-3.2.1.min.js"></script>
             <script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js"></script>
             <script type="text/javascript" src="${path}/static/js/pizzas.js"></script>
