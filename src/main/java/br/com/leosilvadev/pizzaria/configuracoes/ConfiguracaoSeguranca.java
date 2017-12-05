@@ -1,6 +1,5 @@
 package br.com.leosilvadev.pizzaria.configuracoes;
 
-import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,10 +9,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import br.com.leosilvadev.pizzaria.modelo.repositorios.UsuarioRepositorio;
@@ -30,10 +25,9 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(servicoAutenticacao)
         .passwordEncoder(encoder());
-            
     }
     
-    
+     
    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()

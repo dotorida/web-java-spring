@@ -65,7 +65,8 @@ public class IngredienteController {
     
     @RequestMapping(method=RequestMethod.DELETE, value="/{id}")
     public ResponseEntity<String> deletarIngrediente(@PathVariable Long id){
-        try{
+       System.out.println("no metodo deletarIngrediente "+id); 
+       try{
             ingredienteRepositorio.delete(id);  
             System.out.println("apagou com sucesso");
             return new ResponseEntity<String>(HttpStatus.OK);

@@ -3,6 +3,7 @@ $(document).ready(function(){
 	aplicatListenerBtnSalvar();
 });
 
+
 var aplicatListenerBtnSalvar = function(){
 	$('#btn-salvar').click(function(){
 		var url = 'ingredientes';
@@ -21,8 +22,7 @@ var aplicatListenerBtnSalvar = function(){
 			});
 	});
 }
-
-
+    
 var limparModal = function(){
 	$('#id').val('');
 	$('#nome').val('');
@@ -32,28 +32,10 @@ var limparModal = function(){
 
 var aplicarListeners = function(){
 	$('#modal-ingrediente').on('hide.bs.modal', limparModal);
-	
-	  $('.xxx').click(function(){
-	       console.log('ola');   
-	   });
-	
-	   
-	   $('.btn-deletar').click(function(){
-    		var id = $(this).parents('tr').data('id');
-    		$.ajax({
-    			url : 'ingredientes/'+id,
-    			type: 'DELETE',
-    		    success: function(result) {
-    		    	$('tr[data-id="'+id+'"]').remove();
-    				var ingredientes = parseInt( $('#quantidade-ingredientes').text() );
-    		    	$('#quantidade-ingredientes').text(ingredientes - 1);
-    		    }
-    		});
-		
-	   });
 	   
 	$('.btn-editar').click(function(){
 		var idIngrediente = $(this).parents('tr').data('id');
+		
 		
 		$.ajax({
 		      type:'GET',
@@ -66,7 +48,25 @@ var aplicarListeners = function(){
 				$('#modal-ingrediente').modal('show');
 			    }
 			});
-	
     });
+    
+     $('.btn-deletar').click(function(){
+    		var id = $(this).parents('tr').data('id');
+    		var csrf = $('#csrf').val();
+    		console.log('iam back again'+id);
+    		$.ajax({
+    			url : 'ingredientes/'+id,
+    			type: 'DELETE',
+    			headers: {'X-CSRF-TOKEN': csrf},
+    		    success: function(result) {
+    		    	$('tr[data-id="'+id+'"]').remove();
+    				var ingredientes = parseInt( $('#quantidade-ingredientes').text() );
+    		    	$('#quantidade-ingredientes').text(ingredientes - 1);
+    		    }
+    		});
+		
+	   });
 };
+
+
 
