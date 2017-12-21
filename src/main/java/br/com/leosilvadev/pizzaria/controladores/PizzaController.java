@@ -1,6 +1,8 @@
 package br.com.leosilvadev.pizzaria.controladores;
 
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -45,14 +48,15 @@ public class PizzaController {
     @RequestMapping(method=RequestMethod.POST)
     public String salvarPizza(@Valid @ModelAttribute Pizza pizza, 
     BindingResult bindingResult, Model model){     
+       System.out.println("salvarPizza");
        
-       
-            /*List<FieldError> errors = bindingResult.getFieldErrors();
+            List<FieldError> errors = bindingResult.getFieldErrors();
             for (FieldError error : errors ) {
                 System.out.println (error.getObjectName() + " - " + error.getDefaultMessage());
-            }*/
-       
-
+            }
+            
+            System.out.println(pizza);
+            
        if(bindingResult.hasFieldErrors()){
            throw new IngredienteInvalidException();
                              

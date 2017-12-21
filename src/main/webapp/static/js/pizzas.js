@@ -21,6 +21,7 @@ var aplicarListenerBtnSalvar = function(){
     $('#btn-salvar').click(function(){
         var url='pizzas';
         var dadosPizza =  $('#form-pizza').serialize(); 
+        console.log('dados '+ dadosPizza);
         $.post(url,dadosPizza)
           .done(function(pagina) {
              $('#secao-pizza').html(pagina);

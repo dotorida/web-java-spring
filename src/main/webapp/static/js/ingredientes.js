@@ -6,9 +6,11 @@ $(document).ready(function(){
 
 var aplicatListenerBtnSalvar = function(){
 	$('#btn-salvar').click(function(){
+		
+		
 		var url = 'ingredientes';
 		var dadosIngrediente = $('#form-ingrediente').serialize();
-		
+		console.log("aplicatListenerBtnSalvar "+dadosIngrediente);
 		$.post(url, dadosIngrediente)
 			.done(function(pagina){
 				$('#secao-ingredientes').html(pagina);
@@ -30,13 +32,16 @@ var limparModal = function(){
 };
 
 
-var aplicarListeners = function(){
-	$('#modal-ingrediente').on('hide.bs.modal', limparModal);
+
 	   
-	$('.btn-editar').click(function(){
+
+    
+    var aplicarListeners = function(){
+	$('#modal-ingrediente').on('hide.bs.modal', limparModal);
+	
+		$('.btn-editar').on("click",function(){
 		var idIngrediente = $(this).parents('tr').data('id');
-		
-		
+		console.log("btn editar "+idIngrediente)
 		$.ajax({
 		      type:'GET',
 		      url:'ingredientes/'+idIngrediente,
@@ -49,11 +54,11 @@ var aplicarListeners = function(){
 			    }
 			});
     });
-    
-     $('.btn-deletar').click(function(){
+	   
+	  $('.btn-deletar').on("click",function(e){
     		var id = $(this).parents('tr').data('id');
     		var csrf = $('#csrf').val();
-    		console.log('iam back again'+id);
+    		console.log('iam back again'+id+' '+csrf);
     		$.ajax({
     			url : 'ingredientes/'+id,
     			type: 'DELETE',
@@ -65,7 +70,8 @@ var aplicarListeners = function(){
     		    }
     		});
 		
-	   });
+	   });  
+    
 };
 
 

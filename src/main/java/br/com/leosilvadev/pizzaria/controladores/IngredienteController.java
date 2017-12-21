@@ -73,7 +73,6 @@ public class IngredienteController {
         }catch(Exception ex){
             return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
-        
     }
     
    
