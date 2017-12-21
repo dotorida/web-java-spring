@@ -66,10 +66,12 @@ var aplicarListeners = function(){
     
     $('.btn-deletar').click(function(){
         var id = $(this).parents('tr').data('id');
-        
+        var csrf = $('#csrf').val();
+        console.log("deletar "+id);
         $.ajax({
             url: 'pizzas/'+id,
             type: 'DELETE',
+            headers: {'X-CSRF-TOKEN': csrf},
             success: function(result) {
                  $('tr[data-id="'+id+'"]').remove(); 
                  

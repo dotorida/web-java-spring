@@ -32,7 +32,7 @@
                         <option value="${ingrediente.id}">${ingrediente.nome}</option>                    
                     </c:forEach>
                 </select>
-                
+               <input type="hidden" name="_csrf" id="csrf" value="${_csrf.token}">
                 <input type="hidden" id="id" name="id"/>
 
                 
