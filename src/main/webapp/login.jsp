@@ -33,7 +33,20 @@
 </head>
 <body>
     <section id="login" class="panel panel-primary">
-        <form action="${path}/autenticar" method="post">        
+       
+       <c:if test='${not empty param["semacesso"]}'>
+           <div class="alert alert-warning">
+           Utilizador e/ou senha errada
+           </div>
+       </c:if>
+       
+       <c:if test='${not empty param["saiu"]}'>
+            <div class="alert alert-info">
+            Saiu com sucesso!
+            </div>
+       </c:if>
+       
+       <form action="${path}/autenticar" method="post">        
             <div class="panel-heading">
                 Pizzaria - Login
             </div>
