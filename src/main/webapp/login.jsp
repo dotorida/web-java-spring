@@ -53,10 +53,10 @@
             
             <div class="panel-body">
                 <label for="usuario"></label>
-                <input type="text" id="usuario" name="usuario" class="form-control">
+                <input type="text" id="usuario" name="usuario" class="form-control" required/>
                 
                 <label for="senha"></label>
-                <input type="password" id="senha" name="senha" class="form-control">
+                <input type="password" id="senha" name="senha" class="form-control" required re/>
                 
             </div>
             <div class="panel-footer">
